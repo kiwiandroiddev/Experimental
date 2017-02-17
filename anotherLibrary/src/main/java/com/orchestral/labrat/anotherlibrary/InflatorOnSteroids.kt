@@ -7,16 +7,22 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.TextView
 
-class InflatorOnSteriods(val appCompatActivity: AppCompatActivity) : LayoutInflaterFactory {
+class InflatorOnSteriods(appCompatActivity1: AppCompatActivity) : LayoutInflaterFactory {
+
+    var appCompatActivity: AppCompatActivity
+
+    init {
+        this.appCompatActivity = appCompatActivity1
+    }
 
     override fun onCreateView(parent: View, name: String, context: Context, attrs: AttributeSet): View? {
         if (name == "TextView") {
             val textview = TextView(context, attrs)
-            textview.text = context.getStringRecurr(R.string.concated_string)
-
+            textview.text = context.getStringRecurr(textview.text.toString())
             return textview
         }
         return null
     }
+
 
 }

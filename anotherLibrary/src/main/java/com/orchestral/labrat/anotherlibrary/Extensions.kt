@@ -9,6 +9,10 @@ fun Context.getStringRecurr(resourceID: Int): String {
     return rResolveAllStringsIn(this, currentString)
 }
 
+fun Context.getStringRecurr(currentString: String): String {
+    return rResolveAllStringsIn(this, currentString)
+}
+
 fun rResolveAllStringsIn(context: Context, source: String?): String {
     val pattern = Pattern.compile("@string/([A-Za-z0-9-_]*)").matcher(source)
     val sb = StringBuffer()
