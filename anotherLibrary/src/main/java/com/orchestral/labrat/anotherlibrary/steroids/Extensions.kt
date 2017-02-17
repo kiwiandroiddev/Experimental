@@ -1,4 +1,4 @@
-package com.orchestral.labrat.anotherlibrary
+package com.orchestral.labrat.anotherlibrary.steroids
 
 import android.content.Context
 import java.util.regex.Pattern

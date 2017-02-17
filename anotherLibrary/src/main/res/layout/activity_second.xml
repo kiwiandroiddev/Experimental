@@ -11,7 +11,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.orchestral.labrat.anotherlibrary.SecondActivity">
+    tools:context="com.orchestral.labrat.anotherlibrary.steroids.SteroidsActivity">
 
     <TextView
         android:id="@+id/text"
@@ -20,7 +20,7 @@
         android:text="@string/concated_string"
         android:textSize="20sp" />
 
-    <android.support.v7.widget.AppCompatImageView
+    <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -7,7 +7,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
         <activity
-            android:name=".SecondActivity"
+            android:name=".SecondaryActivity"
             android:label="@string/title_activity_second"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
     </application>

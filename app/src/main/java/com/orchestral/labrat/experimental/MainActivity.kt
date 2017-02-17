@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import com.orchestral.labrat.anotherlibrary.SecondActivity
+import com.orchestral.labrat.anotherlibrary.SecondaryActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener {
-            val intent = Intent(this@MainActivity, SecondActivity::class.java)
+            val intent = Intent(this@MainActivity, SecondaryActivity::class.java)
             this@MainActivity.startActivity(intent)
         }
     }
