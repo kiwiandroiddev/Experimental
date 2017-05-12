@@ -1,17 +1,25 @@
 package com.orchestral.labrat.experimental
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.app.AppCompatDelegate
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import com.orchestral.labrat.anotherlibrary.SecondaryActivity
+
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        init {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        delegate.setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
@@ -19,9 +27,22 @@ class MainActivity : AppCompatActivity() {
 
         val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener {
-            val intent = Intent(this@MainActivity, SecondaryActivity::class.java)
-            this@MainActivity.startActivity(intent)
+            var builder = AlertDialog.Builder(this)
+            builder = builder.setTitle(title)
+                    .setMessage("test")
+                    .setPositiveButton("test") { dialog, which -> }
+            val alert = builder.create()
+           //Uncomment to fix the bug alert.delegate.setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            alert.show()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
