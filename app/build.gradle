@@ -2,6 +2,19 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+
+buildscript {
+    ext.kotlin_version = ''
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.2-3"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:1.1.2-3"
+    }
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
@@ -40,6 +53,6 @@ dependencies {
     compile project(':anotherLibrary')
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.android.support:design:25.1.0'
-    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.6'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.1.2'
     testCompile 'junit:junit:4.12'
 }

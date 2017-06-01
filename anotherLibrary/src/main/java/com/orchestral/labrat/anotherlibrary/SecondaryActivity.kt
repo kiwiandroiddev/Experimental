@@ -3,13 +3,12 @@ package com.orchestral.labrat.anotherlibrary
 import android.content.Intent
 import android.os.Bundle
 import com.orchestral.labrat.anotherlibrary.steroids.SteroidsActivity
-import kotlinx.android.synthetic.main.activity_second.*
 
 
 class SecondaryActivity : SteroidsActivity() {
 
     override fun getActivityLayout(): Int {
-        return R.layout.activity_second
+        return R.layout.activity_second1
     }
 
 
