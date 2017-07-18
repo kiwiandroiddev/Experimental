@@ -1,13 +1,10 @@
 package com.orchestral.labrat.experimental
 
-import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
-import android.view.Menu
-import android.view.MenuItem
-import com.orchestral.labrat.anotherlibrary.SecondaryActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,29 +14,13 @@ class MainActivity : AppCompatActivity() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
-        val fab = findViewById(R.id.fab) as FloatingActionButton
-        fab.setOnClickListener {
-            val intent = Intent(this@MainActivity, SecondaryActivity::class.java)
-            this@MainActivity.startActivity(intent)
-        }
+        initRecyclerView()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
+    private fun initRecyclerView() {
+        main_recyclerview.layoutManager = LinearLayoutManager(this)
+        main_recyclerview.adapter = HeaderWrapperAdapter(StaticItemsAdapter())
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        val id = item.itemId
-
-        if (id == R.id.action_settings) {
-            return true
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
 }
+

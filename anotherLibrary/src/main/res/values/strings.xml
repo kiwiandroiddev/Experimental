@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Another Library</string>
-    <string name="title_activity_second">SecondActivity</string>
-    <string name="concated_string">Name of app goes here: @string/app_name</string>
-
-</resources>
