@@ -28,7 +28,7 @@ class HeaderWrapperAdapter(val wrappedAdapter: RecyclerView.Adapter<RecyclerView
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (position > 0) {
             val wrappedAdapterPosition = position - NUM_HEADER_ITEMS
-            wrappedAdapter.bindViewHolder(holder, wrappedAdapterPosition)
+            wrappedAdapter.onBindViewHolder(holder, wrappedAdapterPosition)
         }
     }
 
