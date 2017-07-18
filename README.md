@@ -8,4 +8,4 @@ It appears to work, until the users scrolls. At this point a duplicate item will
       at android.support.v7.widget.GapWorker$LayoutPrefetchRegistryImpl.addPosition(GapWorker.java:110)
       at android.support.v7.widget.LinearLayoutManager.collectPrefetchPositionsForLayoutState(LinearLayoutManager
 
-See associated Stackoverflow question here: TODO
+**Update/Fix:** the fix is to call `onBindViewHolder()` in the wrapping adapter (not `bindViewHolder()`). Sample project updated with fix.
